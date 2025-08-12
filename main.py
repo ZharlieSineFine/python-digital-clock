@@ -1,9 +1,9 @@
 # Python PyQt5 Digital Clock from Bro Code Python Tutorial
 import sys
 
-from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 from PyQt5.QtCore import QTimer, QTime, Qt
+from PyQt5.QtGui import QFont, QFontDatabase
 
 
 class DigitalClock(QWidget):
@@ -23,10 +23,15 @@ class DigitalClock(QWidget):
 
         self.time_label.setAlignment(Qt.AlignCenter)
 
-        self.time_label.setFont(QFont('Arial'))
+        font_id = QFontDatabase.addApplicationFont("DS-DIGIT.TTF")
+        font_family = QFontDatabase.applicationFontFamilies(font_id)[0]
+        my_font = QFont(font_family, 150)
+        self.time_label.setFont(my_font)
+
         self.time_label.setStyleSheet("font-size: 150px;"
                                       "color: rgb(56, 237, 53);"
-                                      "background-color: black;")
+                                      )
+        self.setStyleSheet("background-color: black;")
 
         self.timer.timeout.connect(self.update_time)
         self.timer.start(1000)
