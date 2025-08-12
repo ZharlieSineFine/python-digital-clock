@@ -1,5 +1,6 @@
 # Python PyQt5 Digital Clock from Bro Code Python Tutorial
 import sys
+from datetime import datetime
 
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 from PyQt5.QtCore import QTimer, QTime, Qt
@@ -39,7 +40,8 @@ class DigitalClock(QWidget):
         self.update_time()
 
     def update_time(self):
-        current_time = QTime.currentTime().toString("hh:mm:ss AP")
+        now = datetime.now()
+        current_time = now.strftime("%I:%M:%S %p")  # AM/PM in English
         self.time_label.setText(current_time)
 
 
