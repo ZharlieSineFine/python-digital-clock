@@ -13,6 +13,7 @@ It was created by following Bro Code's YouTube tutorial:
 ## 🖼️ Screenshot
 
 ![PyQt5 Digital Clock](screenshot/digital_clock.png)
+
 *(Styled with a black background and green digits)*
 
 ## 🛠️ Features
