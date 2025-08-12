@@ -12,7 +12,7 @@ It was created by following Bro Code's YouTube tutorial:
 
 ## 🖼️ Screenshot
 
-![Uploading digital_clock.png…]()
+screenshot/digital_clock.png
 *(Styled with a black background and green digits)*
 
 ## 🛠️ Features
